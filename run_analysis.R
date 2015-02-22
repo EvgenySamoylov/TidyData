@@ -57,7 +57,7 @@ X_subset <- subset(X_total, select=mean_and_std)
 y_test <- read.table(paste(directory,"UCI HAR Dataset/test/y_test.txt",sep="/"), header=FALSE, col.names="Activity")
 y_train <- read.table(paste(directory,"UCI HAR Dataset/train/y_train.txt",sep="/"), header=FALSE, col.names="Activity")
 y_total <- rbind(y_train,y_test)
-X_total <- cbind(X_total,y_total)
+X_subset <- cbind(X_subset,y_total)
 
 ## Read the activity labels
 activity_labels <- read.table(paste(directory,"UCI HAR Dataset/activity_labels.txt",sep="/"), header=FALSE, sep=" ")
@@ -65,14 +65,14 @@ activity_labels[,2] <-as.character(activity_labels[,2])
 
 ## Making the 'Activity' variable to the descriptive activity names
 for (i in 1:nrow(activity_labels)){
-  X_total$Activity[X_total$Activity %in% i] = activity_labels[i,2]
+  X_subset$Activity[X_subset$Activity %in% i] = activity_labels[i,2]
 }
 
 ## Adding the Subject to the data
 subject_test <- read.table(paste(directory,"UCI HAR Dataset/test/subject_test.txt",sep="/"), header=FALSE, col.names="Subject")
 subject_train <- read.table(paste(directory,"UCI HAR Dataset/train/subject_train.txt",sep="/"), header=FALSE, col.names="Subject")
 subject_total <- rbind(subject_train,subject_test)
-X_total <- cbind(X_total,subject_total)
+X_subset <- cbind(X_subset,subject_total)
 
 ## Calculating the average value for all variables for each unique Activity/Subject pair
 ## and store results in the tidy dataset
@@ -84,7 +84,7 @@ if (!library("reshape2", logical.return=TRUE)){
 library("reshape2")
 
 ## Melting the original dataset to the long format by Activity and Subject variables
-melt_data <- melt(X_total, id.vars=c("Activity","Subject"))
+melt_data <- melt(X_subset, id.vars=c("Activity","Subject"))
 
 ## Casting the molten data back to the data frame 
 ## and calculate the mean or all variables
