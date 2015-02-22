@@ -3,7 +3,7 @@
 The resulting tidy dataset are processed from the initial 'UCI HAR Dataset' dataset (available here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) with the following steps:
 
 * Merges the X_train.txt and the X_test.txt sets in one dataset with 10299 observations of 561 variables.
-* Extracts only the measurements on the mean and standard deviation for each measurement. It means subsetting the only variables contained either 'mean()' or 'std()' at the end of the names (check the features_info.txt for more details). The resulted dataset has 10299 obs. of 79 variables after this step.
+* Extracts the only variables with the mean and standard deviation for each measurement. It means subsetting the only variables contained either 'mean()' or 'std()' at the end of the names (check the features_info.txt for more details). The resulted dataset has 10299 obs. of 79 variables after this step.
 * Adds the labels to the data. Labels are stored in the y_train.txt and y_test.txt files. The resulted labels dataset has 10299 obs of 1 variable. Labels dataset is added to the X dataset as the last column, so the resulted X dataset has 80 variables after this step.
 * Changes the numeric labels to the descriptive view. The descriptive names are from the activity_labels.txt file.
 * Adds the Subjects to the data. Subjects are stored in the subject_train.txt and subject_test.txt files. The resulted Subjects dataset has 10299 obs of 1 variable. Subjects dataset is added to the X dataset as the last column, so the resulted X dataset has 81 variables after this step.
