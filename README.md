@@ -1,7 +1,7 @@
 # TidyData
 The repository for the Getting and Cleaning Data Course Project
 
-The run_analysis.R script analyses the 'UCI HAR Dataset' available by the URL https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip and generates the tidy dataset contained 180 obs. of 563 variables as result. This resulted dataset will be saved as the tidy_data.txt file in the script working directory.
+The run_analysis.R script analyses the 'UCI HAR Dataset' available by the URL https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip and generates the tidy dataset contained 180 obs. of 81 variables as result. This resulted dataset will be saved as the tidy_data.txt file in the script working directory.
 
 ## Function has two arguments
 
